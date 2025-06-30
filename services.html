@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Services</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #0c0c0c;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 50px;
+                max-width: 100%;
+                width: 100%;
+                margin: 10px auto;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                padding-left: 50px;
+                text-decoration: none;
+                color: #ffffff;
+            }
+
+            #logo {
+                color: #FFB22C;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            nav a {
+               position: relative;
+               display: inline-block;
+               align-items: center;
+               color: #ffffff;
+               text-decoration: none;
+               font-size: 16px;
+               cursor: pointer;
+            }
+
+            nav a::after {
+               content: "";
+               position: absolute;
+               left: 0;
+               bottom: -8px; /* creates space (gap) between text and underline */
+               width: 100%;
+               height: 2px;
+               background-color: #FFB22C;
+               transform: scaleX(0);
+               transform-origin: left;
+               transition: transform 0.3s ease;
+            }
+
+            nav a:hover::after {
+               transform: scaleX(1);
+            }
+
+            main {
+                width: 100%;
+                padding: 10px 40px;
+            }
+
+            .wrap-items {
+                padding: 0 70px;
+            }
+
+            .services-container {
+                width: 100%;
+                max-width: 1050px;
+                margin: 50px auto 0;
+                padding: 25px;
+            }
+
+            .services-container h1 {
+                text-transform: uppercase;
+                text-align: center;
+                letter-spacing: 1px;
+                font-size: 2.3rem;
+                padding-bottom: 10px;
+            }
+
+            .services-container hr {
+                background-color: #FFB22C;
+                height: 5px;
+                width: 10%;
+                margin: 0 auto 25px;
+                border: none;
+                border-radius: 10px;
+            }
+
+            .services-container p {
+                text-align: center;
+                display: block;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 1px;
+                color: #999999;
+                font-weight: 300;
+                padding: 0 20%;
+                margin-bottom: 20px;
+            }
+
+            .colored-icon {
+                width: 80px;
+                height: 80px;
+                background-color: #FFB22C;
+                -webkit-mask-image: var(--img);
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-position: center;
+                -webkit-mask-size: contain;
+                mask-image: var(--img);
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-size: contain;
+                margin: 0 auto 15px;
+                transition: background-color 0.3s ease;
+            }
+
+            .content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .services {
+                width: 100%;
+                max-width: 430px;
+                background-color: #222831;
+                padding: 20px 40px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            .services:hover {
+                background-color: #FFB22C;
+                color: #0c0c0c;
+            }
+
+            .services:hover .colored-icon {
+                background-color: #ffffff; /* changes to white on hover */
+            }
+
+            .services:hover h1 {
+                color: #222831;
+            }
+
+            .services h1 {
+                font-size: 1.5rem;
+                color: #999999;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+            }
+
+            .services p {
+                text-align: justify;
+                letter-spacing: 1px;
+                font-size: 1rem;
+            }
+
+            @media (max-width: 1024px) {
+                .content {
+                    justify-items: center;
+                }
+
+                .services {
+                    margin: 0 auto;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .wrap-items {
+                   padding: 0;
+                   justify-content: center;
+                }
+
+                .services {
+                    width: 100%;
+                    max-width: 430px;
+                    height: auto;
+                    margin: 0 auto;
+                }
+
+                .services p {
+                    padding: 0;
+                    text-align: justify;
+                }
+
+                .content {
+                    grid-template-columns: 1fr;
+                    justify-items: center;
+                    gap: 20px;
+                }
+            }
+
+            @media (max-width: 468px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .wrap-items {
+                   padding: 0;
+                   justify-content: center;
+                }
+
+                .services {
+                    width: 100%;
+                    max-width: 430px;
+                    height: auto;
+                    margin: 0 auto;
+                }
+
+                .services-container p {
+                    padding: 0;
+                    text-align: justify;
+                }
+
+                .content {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                    justify-items: center;
+                }
+
+                .services h1 {
+                    font-size: 1.3rem;
+                }
+
+                .services p {
+                    font-size: 0.90rem;
+                }
+            }
+    </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="logo"><span id="logo">My</span>Portfolio</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resume.html">Resume</a>
+                <a href="portfolio.html">Porfolio</a>
+                <a href="contactme.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="services-container">
+                <h1>Services</h1>
+                <hr>
+                <p>Whether you need a stunning website, a fresh design, or technical support — I’m here to help! 
+                    Let’s build something awesome together.</p>
+            </div>
+
+            <div class="wrap-items">
+                <div class="content">
+                    <div class="services">
+                        <div class="colored-icon" style="--img: url('web-design.png');"></div>
+                        <h1>Web Design</h1>
+                        <p>I design simple and clean websites — whether for business or personal use. I focus on making it easy to navigate and nice to look at.</p>
+                    </div>
+                    <div class="services">
+                        <div class="colored-icon" style="--img: url('pen.png');"></div>
+                        <h1>Graphic Design</h1>
+                        <p>I create simple designs like posters, logos, and social media graphics. Perfect for small businesses, events, or personal use.</p>
+                    </div>
+                    <div class="services">
+                        <div class="colored-icon" style="--img: url('front-end-programming.png');"></div>
+                        <h1>Web Development</h1>
+                        <p>I build basic websites that work well on all devices. From layout to functionality, I can help bring your ideas online.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="header" id="navbar">
+            <h1 class="logo"><span id="logo">My</span>Portfolio</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resume.html">Resume</a>
+                <a href="portfolio.html">Porfolio</a>
+                <a href="contactme.html">Contact</a>
+            </nav>
+        </header>
+        <section class="introduce">
+            <div class="left-side">
+                <p class="intro">Hi, I am</p>
+                <h1><span id="typed-name"></span></h1>
+                <p class="sub">Aspiring <span  id="sub">Web Developer</span> & <span id="sub">Designer</span></p>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BzFTTQuBN/?mibextid=qi2Omg" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://github.com/devdreams25" target="_blank"><img src="github.png" alt="Github"></a>
+                    <a href="https://www.linkedin.com/in/ruth-cerilo-bb944035b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-me">
+            <div class="content">
+                <h2>ABOUT <span id="sub">ME</span></h2>
+                <p>
+                    Hi! I’m Ruth Cerilo, a second-year college student with a deep passion for web development and design. 
+                    I'm currently focused on front-end development, where I enjoy transforming ideas into clean, functional, 
+                    and visually engaging websites. I find joy in writing code, solving problems, and continuously improving 
+                    my skills through real-world projects and challenges. My goal is to create meaningful digital experiences 
+                    that are both user-friendly and impactful. As I continue to grow in this field, I’m eager to explore new 
+                    technologies, collaborate with others, and contribute to the ever-evolving world of the web.
+                </p>
+                <a href="aboutme.html" class="read-more">READ MORE</a>
+            </div>
+        </section>
+
+            <section class="services" id="services-container">
+                <div class="service-heading">
+                    <h1>Services</h1>
+                    <hr>
+                </div>
+
+                <div class="service">
+                    <img src="design.png" alt="Design Icon">
+                    <h2>Design</h2>
+                    <p>I can design websites based on your ideas or give suggestions if you're not sure where to start. 
+                        I enjoy making clean, easy-to-use layouts that look good and work well on different devices.</p>
+                </div>
+                <div class="service">
+                    <img src="develop.png" alt="Development Icon">
+                    <h2>Development</h2>
+                    <p>I build basic websites using HTML, CSS, and JavaScript. I make sure they look nice and work properly. 
+                        I'm still learning more advanced tools, but I always try to do my best and improve with each project.</p>
+                </div>
+                <div class="service">
+                    <img src="maintainance.png" alt="Maintenance Icon" id="maintenance-img">
+                    <h2>Maintenance</h2>
+                    <p>I can help keep your website up to date and fix small issues when they come up. If you're not sure how to 
+                        change something, I’ll do my best to help or figure it out for you.</p>
+                </div>
+            </section>
+
+            <section class="container">
+            <div class="skill-set">
+                <div class="skill-heading">
+                    <h1>Skills</h1>
+                    <hr>
+                </div>
+
+                <h3 id="using-now">Tech Stack</h3>
+                <div class="content-grid">
+                    <div class="skill-item">
+                    <img src="html.png " alt="HTML Language">
+                     <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <img src="css.png" alt="CSS Language">
+                    <P>CSS</P>
+                </div>
+                <div class="skill-item">
+                    <img src="javascript.png" alt="javaScript Language">
+                    <p>javaScript</p>
+                </div>
+                </div>
+
+                <h3 id="learning">Tools & Platforms</h3>
+                <div class="content-grid">
+                    <div class="skill-item">
+                        <img src="figma.png" alt="Penpot">
+                        <p>Figma</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="canva.png" alt="React">
+                        <p>Canva</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="git.png" alt="Git">
+                        <p>Git</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="googledocs.png" alt="Google Docs">
+                        <p>Google Docs</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="googlesheets.png" alt="Google Sheets">
+                        <p>Google Sheets</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="msexcel.png" alt="MS Excel">
+                        <p>MS Excel</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="msword.png" alt="MS Word">
+                        <p>MS Word</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="powerpoint.png" alt="PowerPoint">
+                        <p>PowerPoint</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="projects-content">
+                <div class="portfolio-heading">
+                    <h1>Portfolio</h1>
+                    <hr>
+                </div>
+                    <div class="buttons">
+                        <a href="#" class="filter-btn active" data-filter="all">All</a>
+                        <a href="#" class="filter-btn" data-filter="web">Web Sites</a>
+                        <a href="#" class="filter-btn" data-filter="design">Designs</a>
+                    </div>
+                <div class="grid-projects">
+                    <div id="website-category">
+                        <div class="project-item" data-category="web">
+                            <img src="log-in-page.png" alt="Log-in page">
+                            <div class="overlay-text">
+                                <h3>Log-in Page</h3>
+                                <button class="view-project" data-type="web" 
+                                data-link="https://devdreams25.github.io/Log-in-page/">View Project</button>
+                            </div>
+                        </div>
+                        <div class="project-item" data-category="web">
+                            <img src="product-landing-page.png" alt="Headphone product page">
+                            <div class="overlay-text">
+                                <h3>Product Card Page</h3>
+                                <button class="view-project" data-type="web" 
+                                data-link="https://devdreams25.github.io/Product-Card-Page/">View Project</button>
+                            </div>
+                        </div>
+                        <div class="project-item" data-category="web">
+                            <img src="first-portfolio.png" alt="My First Portfolio">
+                            <div class="overlay-text">
+                                <h3>My First Porfolio</h3>
+                                <button class="view-project" data-type="web" 
+                                data-link="https://devdreams25.github.io/First-Portfolio-/">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="design-category">
+                        <div class="project-item" data-category="design">
+                            <img src="Burger.png" alt="Burger Food Poster">
+                            <div class="overlay-text">
+                                <h3>Burger Poster Design</h3>
+                                <button class="view-project" data-type="design" 
+                                data-img="Burger.png">View Project</button>
+                            </div>
+                        </div>
+                        <div class="project-item" data-category="design">
+                            <img src="Coffee Poster.png" alt="Coffee Design Poster">
+                            <div class="overlay-text">
+                                <h3>Coffee Poster Design</h3>
+                                <button class="view-project" data-type="design" 
+                                data-img="Coffee Poster.png">View Project</button>
+                            </div>
+                        </div>
+                        <div class="project-item" data-category="design">
+                            <img src="Onitsuka Tiger Shoes.png" alt="Onitsuka Shoes Design Poster">
+                            <div class="overlay-text">
+                                <h3>Onitsuka Shoes Design</h3>
+                                <button class="view-project" data-type="design" 
+                                data-img="Onitsuka Tiger Shoes.png">View Project</button>
+                            </div>
+                        </div>
+                        <div class="project-item" data-category="design">
+                            <img src="LEMORA.png" alt="Soda Drink Lemonara Design">
+                            <div class="overlay-text">
+                                <h3>Soda Lemonara Design</h3>
+                                <button class="view-project" data-type="design" 
+                                data-img="LEMORA.png">View Project</button>
+                            </div>
+                        </div>
+                        <div class="project-item" data-category="design">
+                            <img src="porche landing page.jpg" alt="Porche Car Landing Page Design"> 
+                            <div class="overlay-text">
+                                <h3>Porche Car Web Design</h3>
+                                <button class="view-project" data-type="design" 
+                                data-img="porche landing page.jpg">View Project</button>
+                            </div>
+                        </div>
+                        <div id="image-preview" class="preview-overlay">
+                            <span class="close-preview">&times;</span>
+                            <div class="preview-content">
+                              <img id="preview-img" src="" alt="Preview">
+                              <h2 id="preview-title"></h2>
+                            </div>
+                        </div>                           
+                    </div>
+                </div>
+                <a href="portfolio.html" id="project-another-page">See more details</a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-elements">
+                <h2>Have a project in mind? <span>Let's talk.</span></h2>
+                <p>Open to opportunities where I can learn and contribute as I grow.</p>
+                <nav>
+                    <a href="index.html">| Home</a>
+                    <a href="portfolio.html">| Portfolio</a>
+                    <a href="contactme.html">| Contact</a>
+                </nav>
+                <div class="icons">
+                    <a href="https://www.linkedin.com/in/ruth-cerilo-bb944035b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://www.facebook.com/share/1BzFTTQuBN/?mibextid=qi2Omg" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="https://github.com/devdreams25" target="_blank"><img src="github.png" alt="Github"></a>
+                    <a href="https://x.com/X_Samantha1?t=3zLjyJe7QLe04PGS-9VpQQ&s=09" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="https://www.instagram.com/rutheyeber_snach?igsh=MXh0d2R2NTR3cXUzZg==" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+                </div>
+                <div class="copy-right">&copy; 2025 Ruth Cerilo. All rights reserved.
+                    <a href="privacyandlegal.html" class="privacy-legal">Privacy & Legal</a>
+                </div>
+            </div>
+        </footer>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="script.js"></script> 
+
+    </body>
+</html>

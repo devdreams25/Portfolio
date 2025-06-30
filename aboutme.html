@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Me</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #0c0c0c;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 50px;
+                max-width: 100%;
+                width: 100%;
+                margin: 10px auto;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                padding-left: 50px;
+                text-decoration: none;
+                color: #ffffff;
+            }
+
+            #logo {
+                color: #FFB22C;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            nav a {
+                position: relative;
+               display: inline-block;
+               align-items: center;
+               color: #ffffff;
+               text-decoration: none;
+               font-size: 16px;
+               cursor: pointer;
+            }
+
+            nav a::after {
+               content: "";
+               position: absolute;
+               left: 0;
+               bottom: -8px; /* creates space (gap) between text and underline */
+               width: 100%;
+               height: 2px;
+               background-color: #FFB22C;
+               transform: scaleX(0);
+               transform-origin: left;
+               transition: transform 0.3s ease;
+            }
+
+            nav a:hover::after {
+               transform: scaleX(1);
+            }
+
+            main {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 1220px;
+                gap: 70px;
+                padding: 30px;
+                margin: 50px auto 10px auto;
+                text-align: justify;
+            }
+
+            .left-side img {
+                width: 350px;
+                height: auto;
+                border-radius: 12px;
+            }
+
+            .about-heading {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-items: center;
+                width: 100%;
+                max-width: 1050px;
+                margin: 0 auto;
+            }
+
+            .about-heading h1 {
+                font-size: 2.3rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-align: center;
+                padding-bottom: 10px;
+            }
+
+            .about-heading hr {
+                background-color: #FFB22C;
+                height: 5px;
+                width: 10%;
+                margin: 0 auto;
+                border: none;
+                border-radius: 10px;
+                margin-bottom: 25px;
+            }
+
+            .right-side {
+                flex: 1;
+            }
+
+
+            .title {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+            }
+
+            span {
+                color: #FFB22C;
+            }
+
+            .right-side p {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            .info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px 30px;
+                margin: 25px 0;
+            }
+
+            #interest {
+                font-family: 'Segoe UI', sans-serif;
+                padding: 2rem;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .headtext {
+                font-size: 1rem;
+                color: #ccc;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                border-bottom: 2px solid #FFB22C;
+                display: inline-block;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
+
+            .interest-item {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 30px;
+            }
+
+            .item {
+                background-color: #222831;
+                padding: 0.75rem 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                border-radius: 8px;
+            }
+
+            .icon {
+                font-size: 1.2rem;
+                width: 25px;
+                height: 25px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .netflix { color: #e50914; }
+
+            @media (max-width: 1024px) {
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 30px 0;
+                }
+            } 
+
+            @media (max-width: 768px) {
+                .header {
+                    position: static;
+                    padding: 20px 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+
+                nav {
+                    gap: 15px;
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 20px 0;
+                }
+            }
+
+            /* For small phone device */
+            @media (max-width: 468px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 20px auto;
+                    width: 100%;
+                }
+
+                main p {
+                    width: 100%;
+                    font-size: 14px;
+                }
+
+                .left-side img {
+                    max-width: 270px;
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="logo"><span id="logo">My</span>Portfolio</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resume.html">Resume</a>
+                <a href="portfolio.html">Porfolio</a>
+                <a href="contactme.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="about-heading">
+                <h1>About <span>Me</span></h1>
+                <hr>
+            </div>
+            <div class="left-side">
+                    <img src="photoofme.jpg" alt="Photo of mine">
+                </div>
+                <div class="right-side">
+                    <h2 class="title">IT student | <span>Aspiring Web Developer & Designer</span></h2>
+                    <p>Hello! I am Ruth Cerilo an aspiring Web Developer and Designer. I love and 
+                        enjoy coding so much. This is not just about coding this is life.
+                    </p>
+                    <div class="info">
+                        <p><span>&gt; </span><strong> Phone: </strong>+63 9128544006</p>
+                        <p><span>&gt; </span><strong> Location: </strong>Tondo, Manila, Philippines</p>
+                        <p><span>&gt; </span><strong> College Level: </strong>2nd year college</p>
+                        <p><span>&gt; </span><strong> Email: </strong>c08.developer@gmail.com</p>
+                    </div>
+                    <p>
+                        When I was a child, Architecture was my dream course. Designing and building unique structures was something I always dreamed of doing.  
+                        But as time went by, I realized we couldn't afford for me to pursue a degree in Architecture. I was sad, but I had to accept the reality.  
+                        One day, I made an uncertain decision to take a course in Information Technology, even though I wasn't sure if it was the right path for me.  
+                        At first, I found programming challenging, but as time went on, I began to understand how it works, and I discovered that I actually enjoy coding.  
+                        I'm proud when I build websites — even though I'm still a beginner, I can assure you that I always do my best to help.  
+                        I’ve also learned that life is full of uncertainties, and everything happens for a reason.  
+                        That was the first step that led me to love programming today.
+                    </p>                      
+                </div>
+        </main>
+
+        <section id="interest">
+            <p class="headtext">Interests</p>
+            <div class="interest-item">
+                <div class="item"><span class="icon netflix">N </span>Watching Movies</div>
+                <div class="item"><span class="icon">🎧 </span>Listening to Music</div>
+                <div class="item"><span class="icon">🌐 </span>Browsing Internet</div>
+                <div class="item"><span class="icon">🎙️ </span>Podcast</div>
+                <div class="item"><span class="icon">✏️ </span>Editing</div>
+                <div class="item"><span class="icon">📊 </span>Business</div>
+                <div class="item"><span class="icon">💰</span>Finance</div>
+                <div class="item"><span class="icon">🥾</span>Hiking</div>
+                <div class="item"><span class="icon">🎸</span>Learning Guitar</div>
+                <div class="item"><span class="icon">👩‍🍳</span>Cooking</div>
+                <div class="item"><span class="icon">📖</span>Reading</div>
+                <div class="item"><span class="icon">📓</span>Journaling</div>
+            </div>
+        </section>
+    </body>
+</html>
+

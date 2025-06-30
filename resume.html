@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #0c0c0c;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 50px;
+                max-width: 100%;
+                width: 100%;
+                margin: 10px auto;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                padding-left: 50px;
+                text-decoration: none;
+                color: #ffffff;
+            }
+
+            #logo {
+                color: #FFB22C;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            nav a {
+               position: relative;
+               display: inline-block;
+               align-items: center;
+               color: #ffffff;
+               text-decoration: none;
+               font-size: 16px;
+               cursor: pointer;
+            }
+
+            nav a::after {
+               content: "";
+               position: absolute;
+               left: 0;
+               bottom: -8px; /* creates space (gap) between text and underline */
+               width: 100%;
+               height: 2px;
+               background-color: #FFB22C;
+               transform: scaleX(0);
+               transform-origin: left;
+               transition: transform 0.3s ease;
+            }
+
+            nav a:hover::after {
+               transform: scaleX(1);
+            }
+
+            main {
+                display: flex;
+                height: 100vh;
+            }
+
+            .left-side {
+                flex: 2;
+                background-image: url('laptopdesk.jpg');
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                padding: 100px;
+                display: flex;
+                align-items: flex-end;
+            }
+
+            .intro-text {
+                padding: 40px 20px;
+                margin-bottom: 25%;
+            }
+
+            .intro-text span {
+                color: #FFB22C;
+            }
+
+            .intro-text p {
+                font-size: 1.2rem;
+                white-space: nowrap;
+            }
+
+            .intro-text h1 {
+                font-size: 3.5rem;
+                margin: 10px 0; 
+            }
+
+            .intro-text small {
+                font-style: italic;
+                letter-spacing: 1px;
+                font-size: 0.85rem;
+            }
+
+            .right-side {
+                flex: 1;
+                background-color: #222831;
+                text-align: center;
+                padding: 60px 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            #profile {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin: 0 auto 20px;
+                object-fit: contain;
+            }
+
+            .right-side img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: #fff;
+            }
+
+            .right-side h2 {
+                font-size: 2.5rem;
+            }
+
+            .desc {
+                font-size: 1rem;
+                margin: 15px 0;
+                line-height: 1.4;
+            }
+
+            .contact {
+                margin: 80px 0 25px;
+                color: #cfd6f2;
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+
+            .socials {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            .socials a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.2rem;
+            }
+
+            .socials img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .cv-button {
+                text-decoration: none;
+                color: #FFB22C;
+                margin: 25px 0;
+                font-size: 1.2rem;
+                padding: 15px 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: #0c0c0c;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            .cv-button:hover {
+                background-color: #FFB22C;
+                color: #0c0c0c;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .objective-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                padding: 50px 100px;
+                background-color: #1e1e1e;
+                font-family: 'Courier New', monospace;
+                width: 100%;
+            }
+
+            .objective-text {
+                max-width: 850px;
+            }
+
+            .objective-text h1 {
+                margin-bottom: 15px;
+                font-size: 2rem;
+                font-weight: bold;
+                color: #FFB22C;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .objective-text p {
+                font-size: 1rem;
+            }
+
+            .edu-exp-section {
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+                background-color: #222831;
+                color: #fff;
+                padding: 50px 25px;
+                gap: 50px;
+            }
+
+            .edu-background, 
+            .exp-background {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .head {
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .head h1 {
+                color: #FFB22C;
+                margin-bottom: 10px;
+            }
+
+            .head p {
+                font-size: 0.85rem;
+                color: #ccc;
+            }
+
+            ul li::marker{
+                color: #FFB22C;
+            }
+
+            ul li {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+
+            .year {
+                font-size: 1rem;
+                font-weight: bold;
+                margin-top: -5px;
+                background-color: rgba(0, 0, 0, 0.3);
+                padding: 10px 12px;
+                border-radius: 10px;
+                width: 100%;
+                max-width: 150px;
+            }
+
+            .item {
+                margin: 25px 0;
+            }
+
+            .item p {
+                font-size: 1.1rem;
+                line-height: 1.4rem;
+                margin-bottom: 10px;
+                text-align: justify;
+            }
+
+            .item span {
+                font-size: 1rem;
+                color: #FFB22C;
+                font-weight: bold;
+                padding: 5px;
+            }
+
+            .skill-section {
+                background-color: #1e1e1e;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 50px 20px;
+                width: 100%;
+            }
+
+            .skills,
+            .achieve {
+                width: 100%;
+                max-width: 850px;
+            }
+
+            .skill-head {
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+                letter-spacing: 1px;
+            }
+
+            .skill-head h1 {
+                color: #FFB22C;
+                margin-bottom: 10px;
+            }
+
+            .skill-head p {
+                font-size: 0.75rem;
+                color: #ccc;
+            }
+
+            .skill-items ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style-type: disc;
+                gap: 10px 40px;
+            }
+
+            .skill-items ul li {
+                flex: 1 1 45%;
+                font-size: 1.1rem;
+            }
+
+            .certificate {
+                background-color: #222831;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                padding: 50px 20px;
+                width: 100%;
+            }
+
+            .cert-head {
+                color: #FFB22C;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .certificates-img {
+                width: 100%;
+                max-width: 400px;
+                height: 390px;
+            }
+
+            .certificates-img ul li {
+                margin-top: 25px;
+                letter-spacing: 1px;
+            }
+
+            .certificates-img p {
+                color: #ccc;
+                letter-spacing: 1px;
+            }
+
+            .cert-modal {
+                display: none;
+                position: fixed;
+                z-index: 999;
+                padding-top: 80px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+            }
+
+            .cert-modal-content {
+                display: block;
+                margin: auto;
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 10px;
+            }
+
+            .cert-close {
+                position: absolute;
+                top: 20px;
+                right: 40px;
+                font-size: 40px;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 1000;
+            }
+
+            #cert-img {
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            }
+
+            #cert-img:hover {
+                transform: scale(1.03);
+            }
+
+            @media (max-width: 1024px) {
+                .skills,
+                .achieve {
+                    width: 100%;
+                    max-width: 500px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                main {
+                    flex-direction: column;
+                    height: auto;
+                }
+
+                .left-side {
+                    flex: none;
+                    width: 100%;
+                    padding: 40px 20px;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .skills,
+                .achieve {
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                .intro-text {
+                    padding: 0;
+                    margin-bottom: 0;
+                    text-align: center;
+                }
+
+                .intro-text h1 {
+                    font-size: 1.5rem;
+                }
+
+                .objective-section, 
+                .edu-exp-section {
+                    flex-direction: column;
+                    padding: 30px 20px;
+                }
+
+                .edu-exp-section {
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+                }
+
+                .head h1 {
+                    font-size: 1.4rem;
+                }
+
+                .right-side h2 {
+                    font-size: 1.5rem;
+                }
+
+                .edu-background,
+                .exp-background {
+                    width: 100%;
+                }
+                
+            }
+
+            @media (max-width: 468px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                main {
+                    flex-direction: column;
+                    height: auto;
+                }
+
+                .left-side {
+                    flex: none;
+                    width: 100%;
+                    padding: 40px 20px;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .intro-text {
+                    padding: 0;
+                    margin-bottom: 0;
+                    text-align: center;
+                }
+
+                .intro-text h1 {
+                    font-size: 1.5rem;
+                }
+
+                .intro-text p {
+                    font-size: 1rem;
+                    white-space: normal;
+                }
+
+                .skills,
+                .achieve {
+                    width: 100%;
+                    max-width: 400px;
+                }
+
+                .right-side {
+                    width: 100%;
+                    padding: 30px 20px;
+                }
+
+                .right-side h2 {
+                    font-size: 1.5rem;
+                }
+
+                .desc {
+                    font-size: 0.9rem;
+                    padding: 0 20px;
+                }
+
+                .socials img {
+                    width: 30px;
+                    height: 30px;
+                }
+                
+                .cv-button {
+                    width: 100%;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="logo"><span id="logo">My</span>Portfolio</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resume.html">Resume</a>
+                <a href="portfolio.html">Porfolio</a>
+                <a href="contactme.html">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <div class="left-side">
+                <div class="intro-text">
+                    <p><span>Hello</span>, I'm</p>
+                    <h1>Ruth Cerilo</h1>
+                    <small>BS in Information Technology Student</small>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="photo.png" alt="Profile" id="profile">
+                <h2>Ruth Cerilo</h2>
+                <p class="desc">BS in Information Technology Student</p>
+                <p>Ermita, Manila Philippines</p>
+                <div class="contact">
+                    <p>c08.developer@gmail.com</p>
+                    <p>+63 912 854 4006</p>
+                </div>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/ruth-cerilo-bb944035b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn Icon">
+                    </a>
+                    <a href="https://www.facebook.com/share/1BzFTTQuBN/?mibextid=qi2Omg" target="_blank">
+                        <img src="facebook.png" alt="Facebook Icon">
+                    </a>
+                    <a href="https://x.com/X_Samantha1?t=3zLjyJe7QLe04PGS-9VpQQ&s=09" target="_blank">
+                        <img src="twitter.png" alt="Twitter Icon">
+                    </a>
+                    <a href="https://www.instagram.com/rutheyeber_snach?igsh=MXh0d2R2NTR3cXUzZg==" target="_blank">
+                        <img src="instagram.png" alt="Instagram Icon">
+                    </a>
+                </div>
+                <a href="assests/ruth_cerilo_resume.pdf" download>
+                    <button class="cv-button">Download CV</button>
+                </a>
+            </div>
+        </main>
+
+        <section>
+            <div class="objective-section">
+                <div class="objective-text">
+                    <h1>About Me</h1>
+                    <p>I’m an Information Technology student who loves learning and building things with technology. I’m looking for an 
+                    opportunity to grow, gain hands-on experience, and contribute to a team where I can apply what I’ve learned in school. 
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="edu-exp-section">
+            <div class="edu-background">
+                <div class="head">
+                    <h1>Education</h1>
+                    <p>What I've Learned</p>
+                </div>
+        
+                <div class="item">
+                    <ul><li>Adamson University - Manila</li></ul>
+                    <p class="year">2024 - Present</p>
+                    <p>BS in Information Technology</p>
+                    <p>GWA: 1.40 | 1st Term 2024 - 2025</p>
+                    <p>GWA: 1.46 | 2nd Term 2024 - 2025</p>
+                </div>
+        
+                <div class="item">
+                    <ul><li>Kalantiaw Institute - Batan, Aklan</li></ul>
+                    <p class="year">2022 - 2024</p>
+                    <p>Senior High School</p>
+                    <p>Honor Student</p>
+                    <p>General Academic Strand</p>
+                </div>
+        
+                <div class="item">
+                    <ul><li>Kalantiaw Institute - Batan, Aklan</li></ul>
+                    <p class="year">2018 - 2022</p>
+                    <p>Junior High School</p>
+                    <p>Honor Student</p>
+                </div>
+            </div>
+        
+            <div class="exp-background">
+                <div class="head">
+                    <h1>Experience</h1>
+                    <p>Where I've worked</p>
+                </div>
+        
+                <div class="item">
+                    <ul><li>June - August 2024</li></ul>
+                    <p>Office Assistant | Work from Home</p>
+                    <p><span>➤ </span> Efficiently managed office supplies by organizing inventory, placing timely orders, and ensuring 
+                        materials were always stocked to support smooth daily operations.</p>
+                    <p><span>➤ </span> Handled incoming calls and emails, responding promptly and directing inquiries to the appropriate team members.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skill-section">
+            <div class="skills">
+                <div class="skill-head">
+                    <h1>Skills</h1>
+                    <p>What I bring to the table</p>
+                </div>
+                <div class="skill-items">
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>Graphic Design</li>
+                        <li>Video Editing</li>
+                        <li>CMS Development</li>
+                        <li>Excel & Google Sheets Reporting</li>
+                        <li>Passion to Learn & Curiosity</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="certificate">
+            <div class="achieve">
+                <div class="cert-head">
+                    <h1>Certificates</h1>
+                </div>
+                <div class="certificates-img">
+                    <img src="freecodecamp-certificate.png" alt="FreecodeCamp Certificate" id="cert-img">
+                    <ul class="certificates">
+                        <li>Responsive Web Design</li>
+                        <p>FreecodeCamp - 2025</p>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Modal -->
+        <div class="cert-modal" id="cert-modal">
+           <span class="cert-close" id="cert-close">&times;</span>
+           <img class="cert-modal-content" id="cert-full">
+        </div>
+
+        <script>
+            const modal = document.getElementById("cert-modal");
+            const img = document.getElementById("cert-img");
+            const full = document.getElementById("cert-full");
+            const close = document.getElementById("cert-close");
+          
+            img.onclick = function () {
+              modal.style.display = "block";
+              full.src = this.src;
+            };
+          
+            close.onclick = function () {
+              modal.style.display = "none";
+            };
+          
+            window.onclick = function (e) {
+              if (e.target === modal) {
+                modal.style.display = "none";
+              }
+            };
+          </script>
+          
+    </body>
+</html>

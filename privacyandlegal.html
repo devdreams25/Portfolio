@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Privacy & Legal</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #0c0c0c;
+                color: #fff;
+                font-family: Arial, sans-serif;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 50px;
+                max-width: 100%;
+                width: 100%;
+                margin: 10px auto;
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                padding-left: 50px;
+                text-decoration: none;
+                color: #ffffff;
+            }
+
+            #logo {
+                color: #FFB22C;
+            }
+
+            nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+
+            nav a {
+                position: relative;
+               display: inline-block;
+               align-items: center;
+               color: #ffffff;
+               text-decoration: none;
+               font-size: 16px;
+               cursor: pointer;
+            }
+
+            nav a::after {
+               content: "";
+               position: absolute;
+               left: 0;
+               bottom: -8px; /* creates space (gap) between text and underline */
+               width: 100%;
+               height: 2px;
+               background-color: #FFB22C;
+               transform: scaleX(0);
+               transform-origin: left;
+               transition: transform 0.3s ease;
+            }
+
+            nav a:hover::after {
+               transform: scaleX(1);
+            }
+
+            main {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .heading {
+                width: 100%;
+                max-width: 1050px;
+                margin: 25px auto 0;
+                padding: 25px;
+            }
+
+            .heading h1 {
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 2.3rem;
+                padding-bottom: 10px;
+            }
+
+            .heading hr {
+                background-color: #FFB22C;
+                width: 10%;
+                height: 5px;
+                border: none;
+                border-radius: 10px;
+                margin: 0 auto 25px;
+            }
+
+            .heading span {
+                color: #FFB22C;
+            }
+
+            .content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                max-width: 1200px;
+                margin: 20px auto 0;
+                padding: 10px;
+            }
+
+            .information {
+                font-size: 1.1rem;
+                font-family: Tahoma;
+            }
+
+            .information h3 {
+                color: #FFB22C;
+                margin: 8px 0;
+            }
+
+            .information p {
+                margin-bottom: 25px;
+                font-size: 1rem;
+            }
+
+            .information ul li::marker {
+                color: #FFB22C;
+                font-size: 1.2rem;
+            }
+
+            .sub-list {
+                margin: 0 0 25px 20px;
+                list-style-type: disc;
+            }
+
+            #contact {
+                text-decoration: none;
+                color: blue;
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+
+            #contact:hover {
+                color: #FFB22C;
+            }
+
+            @media (max-width: 768px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .information {
+                    text-align: justify;
+                }
+            }
+            
+            @media (max-width: 468px) {
+                .header {
+                  position: static;
+                  padding: 20px 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                }
+  
+                .logo {
+                  margin-bottom: 40px;
+                  font-size: 20px;
+                  text-align: left;
+                }
+  
+                nav {
+                  gap: 15px;
+                  width: 100%;
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .heading h1 {
+                    font-size: 1.5rem;
+                }
+
+                .information {
+                    text-align: justify;
+                    margin: 0 auto;
+                }
+
+                .information h3 {
+                    font-size: 1rem;
+                }
+
+                .information p {
+                    font-size: 0.9rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="logo"><span id="logo">My</span>Portfolio</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="aboutme.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="resume.html">Resume</a>
+                <a href="portfolio.html">Porfolio</a>
+                <a href="contactme.html">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="heading">
+                <h1>Privacy <span>&</span> Legal</h1>
+                <hr>
+            </div>
+
+            <div class="content">
+                <div class="information">
+                    <h3>Privacy Policy</h3>
+                    <p>I respect your privacy. When you browse this website, I do not collect any personal data unless you choose
+                    to contact me directly (e.g., through the contact form or email). Any information you provide will only be used 
+                    to respond to your inquiry and will not be shared or sold to third parties.</p>
+                    
+                    <h3>Data Collection</h3>
+                    <ul class="sub-list">
+                        <li>I do not use cookies or tracking tools.</li>
+                        <li>Any data submitted through forms (like name or email) is used only for communication purposes.</li>
+                    </ul>
+
+                    <h3>Copyright Notice</h3>
+                    <p>All content on this site — including images, text, and code — is created by me unless otherwise stated. 
+                    You may not copy, reuse, or redistribute any content without permission.</p>
+                    
+                    <h3>Third-Party Links</h3>
+                    <p>This site may contain links to external websites. I am not responsible for the privacy practices or content of those sites.</p>
+                    
+                    <h3>Contact</h3>
+                    <p>If you have any questions regarding this policy or how your information is handled, feel free to <a href="contactme.html" id="contact">contact me</a>.</p>
+                </div>
+            </div>
+        </main>
+        
+    </body>
+</html>
